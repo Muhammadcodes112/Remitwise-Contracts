@@ -77,8 +77,8 @@ pub enum Error {
     BatchValidationFailed = 10,
     InvalidLimit = 11,
     InvalidDueDate = 12,
-    InvalidTag = 12,
-    EmptyTags = 13,
+    InvalidTag = 13,
+    EmptyTags = 14,
 }
 
 #[derive(Clone)]
