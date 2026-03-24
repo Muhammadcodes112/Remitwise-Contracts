@@ -478,6 +478,11 @@ See [scripts/README_INVARIANT_TESTS.md](scripts/README_INVARIANT_TESTS.md) for d
 - The suite covers minting the payer account, splitting across spending/savings/bills/insurance, and asserting balances along with the new allocation metadata helper.
 - The same command is intended for CI so it runs without manual setup; re-run locally whenever split logic changes or new USDC paths are added.
 
+### Reporting storage statistics (local & CI)
+
+- `cargo test -p reporting` includes regression coverage for `get_storage_stats`: empty contract, many stored reports, partial archive, cleanup, and a second archive/cleanup cycle so active and archived counters stay consistent with on-chain maps.
+- Re-run after any change to `store_report`, `archive_old_reports`, `cleanup_old_reports`, or `update_storage_stats`.
+
 ## Gas Benchmarks
 
 RemitWise includes a comprehensive gas benchmarking harness for tracking and optimizing contract performance.
