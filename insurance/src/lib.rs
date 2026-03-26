@@ -1,10 +1,12 @@
 #![no_std]
 #![cfg_attr(not(test), deny(clippy::unwrap_used, clippy::expect_used))]
-use soroban_sdk::{
-    contract, contracterror, contractimpl, contracttype, symbol_short, Address, Env, Map, String,
-    Symbol, Vec,
-    contract, contracterror, contractimpl, contracttype, symbol_short, Address, Env, Map, String, Symbol, Vec,
-};
+use soroban_sdk::{contract, contractimpl, contracttype, symbol_short, Address, Env, Symbol, BytesN};
+
+// Also add any missing helper functions
+fn get_killswitch_id(env: &Env) -> Address {
+    // Your implementation here
+    env.storage().instance().get(&symbol_short!("KILLSWITCH")).unwrap()
+}
 
 use remitwise_common::CoverageType;
 #[contracterror]
