@@ -75,6 +75,7 @@ pub const DEFAULT_PAGE_LIMIT: u32 = 20;
 pub const MAX_PAGE_LIMIT: u32 = 50;
 
 /// Storage TTL constants for active data
+/// These constants are defined once - no duplicates
 pub const INSTANCE_LIFETIME_THRESHOLD: u32 = 17280; // ~1 day
 pub const INSTANCE_BUMP_AMOUNT: u32 = 518400; // ~30 days
 
