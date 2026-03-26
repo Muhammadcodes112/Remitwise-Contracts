@@ -286,7 +286,7 @@ impl SavingsGoalContract {
                     panic!("Unauthorized");
                 }
             }
-            Some(admin) if admin != caller => panic!("Unauthorized"),
+            Some(ref admin) if admin != &caller => panic!("Unauthorized"),
             _ => {}
         }
         env.storage()
@@ -385,7 +385,7 @@ impl SavingsGoalContract {
                     panic!("Unauthorized");
                 }
             }
-            Some(adm) if adm != caller => panic!("Unauthorized"),
+            Some(ref adm) if adm != &caller => panic!("Unauthorized"),
             _ => {}
         }
         env.storage()
